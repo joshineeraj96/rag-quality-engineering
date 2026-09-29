@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What is the weight of an object?",
+    "expected_answer": "The weight of an object is the force with which the Earth attracts it. It is given by W = mg."
+  },
+  {
+    "question": "What is the SI unit of weight?",
+    "expected_answer": "The SI unit of weight is newton (N)."
+  },
+  {
+    "question": "What is the relationship between mass and weight?",
+    "expected_answer": "Weight is the product of mass and acceleration due to gravity. It is given by W = mg."
+  },
+  {
+    "question": "What is the difference between mass and weight?",
+    "expected_answer": "Mass is the amount of matter in an object, while weight is the force with which the Earth attracts the object."
+  }
+]

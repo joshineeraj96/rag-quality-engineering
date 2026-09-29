@@ -1,0 +1,12 @@
+[project]
+name = "rag-quality-engineering"
+version = "1.0.0"
+description = "RAG Quality Engineering Framework"
+requires-python = ">=3.12"
+
+dependencies = [
+    "pytest",
+    "pytest-playwright",
+    "deepeval",
+    "rag-application @ file:///D:/rag-application",
+]
