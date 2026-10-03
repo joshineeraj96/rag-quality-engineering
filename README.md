@@ -14,6 +14,9 @@ The framework focuses on validating the main RAG flow through API/E2E tests and 
 * Response validation
 * Security-related scenarios
 * Regression test cases
+* Performance and latency testing
+* P50, P95 and P99 latency measurement
+* P95 latency threshold validation
 
 ## Test Approach
 
@@ -70,6 +73,7 @@ Response
 
 ```text
 rag-quality-engineering/
+
 │
 ├── config/
 │   └── security_metrics.py
@@ -85,7 +89,8 @@ rag-quality-engineering/
 │   └── e2e/
 │       ├── test_rag_query.py
 │       ├── test_rag_quality.py
-│       └── test_rag_security.py
+│       ├── test_rag_security.py
+│       └── test_rag_performance.py
 │
 ├── utils/
 │   └── security_data.py
@@ -123,15 +128,37 @@ Run a specific test file:
 pytest tests/e2e/test_rag_query.py -v
 ```
 
+Run performance tests:
+
+```powershell
+pytest tests/e2e/test_rag_performance.py -v
+```
+
 ## Reporting
 
 The framework can generate test reports and RAG evaluation results.
 
 The project also uses LangSmith for tracing and debugging the RAG execution flow.
 
+## Performance Testing
+
+The framework includes basic RAG performance testing using the golden dataset.
+
+Performance tests measure end-to-end API latency and calculate:
+
+* P50 latency
+* P95 latency
+* P99 latency
+
+A P95 latency threshold is used as a performance quality gate.
+
+The same golden dataset is reused for performance testing to avoid maintaining duplicate test data.
+
+Basic cost-testing concepts are also considered, including token usage and estimated cost per request. The current local Ollama setup does not provide a real API billing cost.
+
 ## Current Scope
 
-The current implementation focuses on the core RAG testing flow and practical quality validation.
+The current implementation focuses on the core RAG testing flow, practical quality validation, security testing, and basic performance validation.
 
 It does not attempt to cover every possible RAG evaluation technique or AI testing scenario.
 
